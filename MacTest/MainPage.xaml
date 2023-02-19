@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MacTest.MainPage">
+
+    <Grid Padding="16" Margin="16,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout Grid.Row="1">
+            <Label x:Name="Heading" FontSize="44" Text="{Binding AppName}"/>
+        </HorizontalStackLayout>
+
+        <Label Grid.Row="2" FontSize="15" Text="Application to process financial statements and make PDF outputs"/>
+
+        <HorizontalStackLayout Spacing="16" Grid.Row="3"  Margin="0,20">
+            <Button
+            Text="Select Detail Excel File"
+            WidthRequest="320"
+            TextColor="#000"
+            CornerRadius="12"
+            Clicked="Button_Clicked"
+            Background="lightgreen"
+            Grid.Row="2"
+            />
+            <Button
+            Text="Select Group Excel File"
+            WidthRequest="320"
+            TextColor="#000"
+            CornerRadius="12"
+            Background="lightgreen"
+            Grid.Row="3"
+            />
+        </HorizontalStackLayout>
+        
+        <ProgressBar x:Name="progressBar"
+                     Progress="0.4"
+                     WidthRequest="300"
+                     ProgressColor="Lime"
+                     IsVisible="true"
+                     Grid.Row="4"
+                     HorizontalOptions="Start"/>
+        
+        <Entry
+           Grid.Row="5"
+           Placeholder="Enter your text here"
+           Text="Sample Text"
+           BackgroundColor="White"
+           TextColor="Black"
+         />
+
+        <StackLayout Grid.Row="6">
+            <RadioButton Content="Option 1" />
+            <RadioButton Content="Option 2" />
+            <RadioButton Content="Option 3" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="7">
+            <CheckBox IsChecked="True" />
+            <Label Text="Check me" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <Image 
+            Grid.Row="8" 
+            Source="dotnet_bot.png" 
+            WidthRequest="100" 
+            HeightRequest="100"
+            HorizontalOptions="Start">
+            <Image.Clip>
+                <EllipseGeometry Center="50,50" RadiusX="25" RadiusY="25" />
+            </Image.Clip>
+        </Image>
+
+    </Grid>
+
+</ContentPage>
